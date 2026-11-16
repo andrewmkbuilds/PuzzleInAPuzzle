@@ -1,4 +1,4 @@
-# SUPER AWESOME PROJECT!!! 
+# Puzzle In A Puzzle 
 
 PuzzleInAPuzzle is a logic-based puzzle game that challenges you to think outside the box. Find clues, spot patterns and use your observation and problem-solving skills to solve each puzzle.
 
