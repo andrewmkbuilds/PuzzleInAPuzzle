@@ -1,0 +1,55 @@
+
+const progressData = loadSave();
+const completed = progressData.completedLevels;
+
+const completedCount = completed.length;
+const totalCount = getTotalPuzzles();
+const percentage = Math.round((completedCount / totalCount) * 100);
+const totalHints = Object.values(progressData.hintsUsed)
+    .reduce(function(total, count) {
+        return total + count;
+    }, 0);
+
+document.getElementById("hints-count").textContent = totalHints;
+document.getElementById("completed-count").textContent = completedCount;
+document.getElementById("total-count").textContent = totalCount;
+document.getElementById("completion-text").textContent = `${percentage}%`;
+document.getElementById("overall-fill").style.width = `${percentage}%`;
+
+const completedList = document.getElementById("completed-list");
+
+if (completedCount === 0) {
+    completedList.textContent = "No puzzles completed yet. Your journey starts now.";
+} else {
+    completed.forEach(function(id) {
+        const puzzle = getPuzzle(id);
+
+        if (!puzzle) {
+            return;
+        }
+
+        const item = document.createElement("div");
+        item.className = "completed-item";
+
+        const name = document.createElement("span");
+        name.textContent = puzzle.title;
+
+        const status = document.createElement("span");
+        status.textContent = "SOLVED";
+        status.className = "solved-label";
+
+        item.appendChild(name);
+        item.appendChild(status);
+
+        completedList.appendChild(item);
+    });
+}
+
+document.getElementById("reset-progress").addEventListener("click", function() {
+    const confirmed = window.confirm("Are you sure you want to erase all your progress?");
+
+    if (confirmed) {
+        resetProgress();
+        window.location.reload();
+    }
+});

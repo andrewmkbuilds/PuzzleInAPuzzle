@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing | PuzzleInAPuzzle</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">Puzzle<span>In</span>APuzzle</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="levels.html">Levels</a>
+            <a href="progress.html">Progress</a>
+        </nav>
+    </header>
+
+    <main class="game-page">
+        <section class="game-panel">
+            <div class="game-top">
+                <a href="index.html" class="back-link">← Back home</a>
+                <span id="level-number">LEVEL 01</span>
+            </div>
+
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+
+            <p class="eyebrow" id="difficulty">EASY</p>
+            <h1 id="puzzle-title">Loading puzzle...</h1>
+            <p class="story" id="puzzle-story"></p>
+
+            <div class="question-box">
+                <p id="puzzle-question"></p>
+            </div>
+
+            <div id="answer-area"></div>
+
+            <div class="game-actions">
+                <button class="button primary" id="submit-answer">Submit answer</button>
+                <button class="button secondary" id="hint-button">Get a hint</button>
+            </div>
+
+            <p id="feedback" class="feedback" aria-live="polite"></p>
+            <p id="hint-text" class="hint-text"></p>
+        </section>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/puzzles.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

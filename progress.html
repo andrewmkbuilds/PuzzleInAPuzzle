@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Progress | PuzzleInAPuzzle</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo">Puzzle<span>In</span>APuzzle</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="levels.html">Levels</a>
+            <a href="progress.html">Progress</a>
+        </nav>
+    </header>
+
+    <main class="progress-page">
+        <section class="progress-heading">
+            <p class="eyebrow">PLAYER STATISTICS</p>
+            <h1>Your journey so far.</h1>
+            <p>Every puzzle solved is another mystery uncovered.</p>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <span>PUZZLES SOLVED</span>
+                <h2 id="completed-count">0</h2>
+            </article>
+
+            <article class="stat-card">
+                <span>TOTAL PUZZLES</span>
+                <h2 id="total-count">0</h2>
+            </article>
+
+            <article class="stat-card">
+                <span>HINTS USED</span>
+                <h2 id="hints-count">0</h2>
+            </article>
+        </section>
+
+        <section class="overall-progress">
+            <div class="progress-label">
+                <h2>Overall completion</h2>
+                <span id="completion-text">0%</span>
+            </div>
+
+            <div class="progress-track">
+                <div class="progress-fill" id="overall-fill"></div>
+            </div>
+        </section>
+
+        <section class="completed-section">
+            <h2>Your completed puzzles</h2>
+            <div id="completed-list"></div>
+        </section>
+
+        <button class="button secondary" id="reset-progress">Reset progress</button>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/puzzles.js"></script>
+    <script src="js/progress.js"></script>
+</body>
+</html>
