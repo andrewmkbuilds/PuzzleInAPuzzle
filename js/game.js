@@ -19,7 +19,11 @@ const requestedLevel = Number(
 
 let currentPuzzle = getPuzzle(requestedLevel);
 
-if (!currentPuzzle || requestedLevel > saveData.currentLevel) {
+if (
+    requestedLevel < 1 ||
+    requestedLevel > saveData.currentLevel ||
+    (!currentPuzzle && requestedLevel !== getTotalPuzzles() + 1)
+) {
     window.location.href = "levels.html";
 }
 let selectedAnswer = "";
